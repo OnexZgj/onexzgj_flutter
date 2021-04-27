@@ -67,8 +67,20 @@ class Home extends StatelessWidget {
                   accountName: Text('onexzgj',
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   accountEmail: Text("474835552@qq.com"),
-                  currentAccountPicture: CircleAvatar(backgroundImage:NetworkImage('https://wx2.sinaimg.cn/mw690/001Pb9yIly3gpw4pg0tdoj61kw1kwx6r02.jpg'),
-
+                  currentAccountPicture: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://wx2.sinaimg.cn/mw690/001Pb9yIly3gpw4pg0tdoj61kw1kwx6r02.jpg'),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.yellow[100],
+                    image: DecorationImage(
+                      image: NetworkImage('https://wx2.sinaimg.cn/mw690/001Pb9yIly3gpw4pg0tdoj61kw1kwx6r02.jpg'),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                          Colors.yellow[400].withOpacity(0.6),
+                          BlendMode.hardLight
+                      ),
+                    )
                   ),
                 ),
                 ListTile(
