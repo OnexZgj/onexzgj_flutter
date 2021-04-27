@@ -39,7 +39,10 @@ class Home extends StatelessWidget {
                 onPressed: () => debugPrint("点击了search"))
           ],
           bottom: TabBar(
-            tabs: [
+            unselectedLabelColor: Colors.deepPurple,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorColor: Colors.red,
+            tabs: <Widget>[
               Tab(icon: Icon(Icons.local_florist)),
               Tab(icon: Icon(Icons.change_history)),
               Tab(icon: Icon(Icons.directions_bike)),
