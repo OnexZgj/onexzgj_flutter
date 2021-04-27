@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './demo/drawer_demo.dart';
+import './demo/BottomNavigationBarDemo.dart';
 
 void main() {
   runApp(App());
@@ -55,29 +56,7 @@ class Home extends StatelessWidget {
             ],
           ),
           drawer: DrawerDemo(),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            fixedColor: Colors.black,
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.explore),
-                title: Text('explore')
-              ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.history),
-                  title: Text('history')
-              ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.list),
-                  title: Text('List')
-              ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  title: Text('My')
-              ),
-            ],
-          ),
-
+          bottomNavigationBar: BottomNavigationBarDemo()
       ),
     );
   }
