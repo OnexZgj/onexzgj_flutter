@@ -23,10 +23,6 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-          ),
-
           title: Text("onexzgj"),
           //右边的按钮
           actions: [
