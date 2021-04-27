@@ -15,29 +15,44 @@ class App extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget{
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+          ),
 
-        leading: IconButton(
-          icon: Icon(
-            Icons.menu
+          title: Text("onexzgj"),
+          //右边的按钮
+          actions: [
+            IconButton(
+                icon: Icon(
+                  Icons.audiotrack,
+                  color: Colors.green,
+                  size: 30.0,
+                ),
+                onPressed: () => debugPrint("点击了search"))
+          ],
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.local_florist)),
+              Tab(icon: Icon(Icons.change_history)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
           ),
         ),
-
-        title: Text("onexzgj"),
-        //右边的按钮
-        actions: [
-          IconButton(
-              icon: Icon(
-                Icons.audiotrack,
-                color: Colors.green,
-                size: 30.0,
-              ),
-              onPressed: () => debugPrint("点击了search"))
-        ],
+        body: TabBarView(
+          children: [
+            Icon(Icons.local_florist, size: 128.0, color: Colors.deepPurple),
+            Icon(Icons.change_history, size: 128.0, color: Colors.deepPurple),
+            Icon(Icons.directions_bike, size: 128.0, color: Colors.deepPurple),
+          ],
+        ),
       ),
     );
   }
