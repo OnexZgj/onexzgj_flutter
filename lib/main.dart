@@ -56,17 +56,33 @@ class Home extends StatelessWidget {
             Icon(Icons.directions_bike, size: 128.0, color: Colors.deepPurple),
           ],
         ),
-        drawer: Container(
-          color: Colors.yellow,
-          padding: EdgeInsets.all(8),
-          child: Column(
-            mainAxisAlignment:MainAxisAlignment.center,
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
             children: [
-              Text("this is drawer")
-              
+              DrawerHeader(
+                  child: Text('header'.toUpperCase()),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[100]
+                  ),
+              ),
+              ListTile(
+                title: Text("messages",textAlign: TextAlign.right),
+                trailing: Icon(Icons.message,color: Colors.black26),
+              ),
+              ListTile(
+                title: Text("messages",textAlign: TextAlign.left),
+                leading: Icon(Icons.message,color: Colors.black26),
+              ),
+              ListTile(
+                title: Text("messages",textAlign: TextAlign.right,style: TextStyle(
+                  color: Colors.deepPurple
+                ),),
+                trailing: Icon(Icons.message,color: Colors.deepPurple),
+              ),
             ],
           ),
-        ),
+        )
       ),
     );
   }
