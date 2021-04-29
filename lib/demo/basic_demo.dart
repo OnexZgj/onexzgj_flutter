@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class BasicDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new ContainerBoxDecorationDemo();
+  }
+}
 
-
+class ContainerBoxDecorationDemo extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return new Container(
@@ -12,16 +17,52 @@ class BasicDemo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            child: Icon(Icons.pool,size: 32,color: Colors.red),
+            child: Icon(Icons.pool, size: 32, color: Colors.red),
             //盒子的背景颜色
             // color: Colors.deepPurpleAccent,
             padding: EdgeInsets.all(16.0),
             margin: EdgeInsets.all(8.0),
             //限制盒子的大小
-            width: 90,
-            height: 90,
+            width: 300,
+            height: 300,
+            //装饰盒子
             decoration: BoxDecoration(
-              color: Colors.deepPurpleAccent,
+              // color: Colors.deepPurpleAccent,
+              image: DecorationImage(
+                image: NetworkImage(
+                    'https://wx1.sinaimg.cn/large/a2dce2bdly1gpkqwcyk4gj22c0340npd.jpg'),
+                alignment: Alignment.topCenter,
+                fit: BoxFit.cover,
+                //这个东西需要研究一下
+                colorFilter: ColorFilter.mode(
+                  Colors.indigoAccent[400].withOpacity(0.5),
+                  BlendMode.hardLight,
+                ),
+              ),
+              border: Border.all(
+                  color: Colors.red, width: 2, style: BorderStyle.solid),
+              //圆角
+              // borderRadius:BorderRadius.circular(16),
+              //阴影
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0.0, 16.0),
+                  color: Color.fromRGBO(16, 20, 188, 1.0),
+                  blurRadius: 16.0,
+                  spreadRadius: 9.0,
+                )
+              ],
+              //形状
+              shape: BoxShape.circle,
+              //渐变
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromRGBO(7, 102, 255, 1.0),
+                  Color.fromRGBO(3, 28, 128, 1.0),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
             ),
           )
         ],
@@ -30,7 +71,7 @@ class BasicDemo extends StatelessWidget {
   }
 }
 
-class RichTextBox extends StatelessWidget{
+class RichTextBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
@@ -40,28 +81,20 @@ class RichTextBox extends StatelessWidget{
               color: Colors.deepOrangeAccent,
               fontSize: 34.0,
               fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w100
-          ),
+              fontWeight: FontWeight.w100),
           children: [
             TextSpan(
                 text: '.net',
                 style: TextStyle(
                   color: Colors.deepPurpleAccent,
                   fontStyle: FontStyle.italic,
-                )
-
-            )
-          ]
-      ),
+                ))
+          ]),
     );
   }
-
 }
 
-
-
-class TextDemo extends StatelessWidget{
-
+class TextDemo extends StatelessWidget {
   TextStyle _textStyle = TextStyle(fontSize: 16.0);
 
   final String _author = "李白";
@@ -78,5 +111,4 @@ class TextDemo extends StatelessWidget{
       overflow: TextOverflow.ellipsis,
     );
   }
-
 }
