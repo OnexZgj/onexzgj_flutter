@@ -7,31 +7,37 @@ class BasicDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        text: 'onexzgj',
-        style: TextStyle(
-          color: Colors.deepOrangeAccent,
-          fontSize: 34.0,
-          fontStyle: FontStyle.italic,
-          fontWeight: FontWeight.w100
-        ),
-        children: [
-          TextSpan(
-            text: '.net',
-            style: TextStyle(
-              color: Colors.deepPurpleAccent,
-              fontStyle: FontStyle.italic,
-            )
-
-          )
-        ]
-      ),
-    );
+    return new RichTextBox();
   }
 }
 
+class RichTextBox extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+          text: 'onexzgj',
+          style: TextStyle(
+              color: Colors.deepOrangeAccent,
+              fontSize: 34.0,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w100
+          ),
+          children: [
+            TextSpan(
+                text: '.net',
+                style: TextStyle(
+                  color: Colors.deepPurpleAccent,
+                  fontStyle: FontStyle.italic,
+                )
 
+            )
+          ]
+      ),
+    );
+  }
+
+}
 
 
 
