@@ -7,7 +7,22 @@ class BasicDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new RichTextBox();
+    return new Container(
+      child: Row(
+        children: [
+          Container(
+            child: Icon(Icons.pool,size: 32,color: Colors.red),
+            //盒子的背景颜色
+            color: Colors.deepPurpleAccent,
+            padding: EdgeInsets.all(16.0),
+            margin: EdgeInsets.all(8.0),
+            //限制盒子的大小
+            width: 90,
+            height: 90,
+          )
+        ],
+      ),
+    );
   }
 }
 
